@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="./src/css/styles.css" />
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="icon" type="image/png" sizes="32x32" href="src/img/favicon-newlook.png">
+
+	<title>Carousel</title>
+</head>
+
+<body>
+	<div id="app">
+		<header>
+			<h1>Chosen for you</h1>
+			<h2>We think you will love these</h2>
+		</header>
+		<main>
+			<div class="controls">
+				<div class="grid">
+
+					<div class="search-bar">
+						<label for="search">
+							<input type="text" id="search" name="search" placeholder="Search..." />
+						</label>
+					</div>
+					<div class="price-range">
+						<div class="flex flex--row flex--between">
+							<div class="flex__item">
+								<label for="min">
+									<input type="text" id="min" name="min" placeholder="min" />
+								</label>
+							</div>
+							<div class="flex__item">
+								<label for="max">
+									<input type="text" id="max" name="max" placeholder="max" />
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="types">
+						<label for="type-select">
+							<select name="product-type" id="type-select">
+								<option value="" selected>All categories</option>
+							</select>
+						</label>
+					</div>
+				</div>
+			</div>
+	</div>
+	<div class="carousel"></div>
+	<div class="pop-up"></div>
+	</main>
+	</div>
+	<script src="./dist/assets/js/bundle.js"></script>
+</body>
+
+</html>

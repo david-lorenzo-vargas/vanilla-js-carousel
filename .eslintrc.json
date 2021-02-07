@@ -1,0 +1,78 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [],
+    "rules": {
+        "arrow-parens": 0,
+        "dot-notation": 0,
+        "class-methods-use-this": 0,
+        "operator-linebreak": 0,
+        "no-multiple-empty-lines": [
+            "error",
+            {
+                "max": 1
+            }
+        ],
+        "linebreak-style": 0,
+        "padding-line-between-statements": [
+            "error",
+            {
+                "blankLine": "always",
+                "prev": "*",
+                "next": [
+                    "multiline-block-like",
+                    "multiline-expression",
+                    "block",
+                    "block-like",
+                    "cjs-export",
+                    "class",
+                    "export",
+                    "import"
+                ]
+            },
+            {
+                "blankLine": "always",
+                "prev": [
+                    "multiline-block-like",
+                    "multiline-expression",
+                    "block",
+                    "block-like",
+                    "cjs-export",
+                    "class",
+                    "export",
+                    "import"
+                ],
+                "next": "*"
+            },
+            {
+                "blankLine": "any",
+                "prev": [
+                    "export",
+                    "import"
+                ],
+                "next": [
+                    "export",
+                    "import"
+                ]
+            }
+        ]
+    },
+    "overrides": [
+        {
+            "files": [
+                "**/*.test.js"
+            ],
+            "env": {
+                "browser": true,
+                "es2021": true
+            },
+            "rules": {}
+        }
+    ]
+}

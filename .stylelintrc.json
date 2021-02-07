@@ -1,0 +1,9 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "order/properties-alphabetical-order": null,
+    "max-nesting-depth": 4,
+    "max-empty-lines": 1,
+    "number-leading-zero": null
+  }
+}

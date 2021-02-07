@@ -1,0 +1,458 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* ==========Typography============= */
+*, body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.25rem;
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+a {
+  color: black;
+}
+
+/* ==========Header============= */
+header {
+  margin: 1em;
+}
+
+/* ==========Layout============= */
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.flex--row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.flex--row > :not(:last-child) {
+  margin-right: 0.8em;
+}
+
+.flex--between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.flex__item {
+  -ms-flex-preferred-size: auto;
+      flex-basis: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template:
+    "search" 1fr
+    "price-range" 1fr
+    "types" 1fr;
+}
+
+/* ==========Controls============= */
+.controls {
+  width: 100%;
+  padding: 0.5em;
+}
+
+.search-bar,
+.price-range,
+.types {
+  padding: 5px;
+  width: 100%;
+}
+
+.search-bar {
+  grid-area: search;
+}
+
+.search-button {
+  background-color: rgb(117, 117, 117);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 7px 10px;
+  height: 100%;
+}
+
+.search-button:active {
+  color: red;
+}
+
+.search-bar label {
+  width: 100%;
+  height: 100%;
+}
+
+input[name="search"],
+input[name="min"],
+input[name="max"],
+select[id="type-select"] {
+  width: 100%;
+  height: 35px;
+  background-color: rgb(223, 219, 219);
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 2px;
+}
+
+input[name="search"]:focus,
+input[name="min"]:focus,
+input[name="max"]:focus {
+  outline: 0;
+  background-color: rgb(177, 177, 177);
+}
+
+select[id="type-select"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 5px;
+ }
+
+select[id="type-select"
+]:focus {
+  outline: 0;
+}
+
+select[id="type-select"] option {
+  font-size: 14px;
+  padding: 0;
+}
+
+.price-range {
+  grid-area: price-range;
+}
+
+.types {
+  grid-area: types;
+}
+
+/* ==========Carousel============ */
+.carousel {
+}
+
+.carousel-container {
+  position: relative;
+}
+
+/* =========ImagesContainer======== */
+
+.items-container {
+  position: relative;
+}
+
+.items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
+
+.item__container {
+  width: 100%;
+  min-width: 300px;
+  cursor: pointer;
+}
+
+.item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+  min-width: 300px;
+}
+
+.item > * {
+  margin-bottom: 14px;
+}
+
+.item__image,
+.pop-up__item__image {
+  width: 100%;
+  height: 300px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.item__details,
+.pop-up__item__details {
+  width: 80%;
+  height: 90px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.item__title {
+
+}
+
+.item__price,
+.pop-up__item__price {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* ========Navigation dots======== */
+.navigation-container {
+  display: none;
+  position: absolute;
+}
+
+/* ==========Buttons============ */
+
+.button {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  font-size: 25px;
+  color: rgba(0, 0, 0, 0.842);
+  position: absolute;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.button--previous {
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-color: rgba(167, 167, 167, 0.548);
+}
+
+.button--next {
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-color: rgba(167, 167, 167, 0.548);
+}
+
+.button--hide {
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  font-size: 32px;
+}
+
+.button--disabled {
+  color: rgb(206, 206, 206);
+  background-color: transparent;
+  cursor: auto;
+}
+
+.button:focus {
+  outline: 0;
+  color: red;
+}
+
+/* ==========Pop-up============ */
+
+.pop-up {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(124, 124, 124, 0.603);
+  display: none;
+}
+
+.pop-up--active {
+  display: block;
+}
+
+.pop-up__item {
+  position: absolute;
+  width: 100%;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 3em 0 0 0;
+}
+
+.pop-up__item > * {
+  margin-bottom: 1.5em;
+}
+
+.pop-up__item {
+  margin-top: 2em;
+}
+
+/* ==========No-filter message============ */
+
+.message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 250px;
+  padding: 20px 30px;
+  background-color: black;
+  color: white;
+}
+
+/* ==========Responsive============ */
+
+/* ==========size(width): 450px - 600px============ */
+@media (min-width: 450px) {
+  h1 {
+    font-size: 1.5rem;
+    margin-top: 1.5em;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "search search"
+      "price-range types";
+    height: 115px;
+  }
+
+  .pop-up__item {
+    width: 80%;
+  }
+
+  .pop-up__item__image {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+/* ==========size(width): 601px - 900px============ */
+@media (min-width: 600px) {
+  .pop-up__item {
+    width: 60%;
+  }
+}
+
+@media (min-width: 900px) {
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "search search price-range types";
+    height: 70px;
+  }
+
+  .controls {
+    width: 100%;
+    padding: 1em;
+  }
+
+  .navigation-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+
+  .navigation-container__item {
+    cursor: pointer;
+    width: 14px;
+    height: 14px;
+    background-color: rgb(206, 206, 206);
+    margin: 10px 5px;
+    border-radius: 50%;
+  }
+
+  .navigation-container__item--active {
+    background-color: red;
+  }
+
+  .navigation-container--hidden {
+    display: none;
+  }
+
+  .pop-up__item {
+    width: 45%;
+  }
+}

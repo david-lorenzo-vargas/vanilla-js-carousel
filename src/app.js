@@ -27,13 +27,20 @@ const app = () => {
     render();
   };
 
-  const setState = (newState) => {
+  const setState = ( newState ) => {
     state = { ...state, ...newState };
     render();
   };
 
   const render = () => {
-    const { products, searchValue, priceRange, selectedType, isPopupActive, productSelected } = state;
+    const {
+      products,
+      searchValue,
+      priceRange,
+      selectedType,
+      isPopupActive,
+      productSelected,
+    } = state;
     carousel.innerHTML = '';
     const results = getItems(products, searchValue, priceRange, selectedType);
     const content = getCarouselContent(results);
@@ -41,13 +48,13 @@ const app = () => {
     togglePopup(productSelected, isPopupActive);
   };
 
-  const getCarouselContent = (results) => {
+  const getCarouselContent = ( results ) => {
     const noItems = results.length === 0;
     const carouselContainer = createCarouselContainer(results);
     const noResultsMessage = createNoResultsMessage();
     const content = noItems ? noResultsMessage : carouselContainer;
     return content;
-  }
+  };
 
   const goToNextSlide = () => {
     const isLastSlide = state.slideNumber === state.products.length - 1;
@@ -70,7 +77,7 @@ const app = () => {
     });
   };
 
-  const togglePopup = (productSelected, isPopupActive) => {
+  const togglePopup = ( productSelected, isPopupActive ) => {
     const isSelected = productSelected && (Object.keys(productSelected).length !== 0);
 
     if (isPopupActive) {
@@ -97,11 +104,16 @@ const app = () => {
 
   const handleHideButtonClick = () => {
     togglePopup();
-  }
+
+    setState({
+      isPopupActive: false,
+      productSelected: {},
+    });
+  };
 
   const handleNavigationItemClick = (index) => {
     setState({
-      slideNumber: index
+      slideNumber: index,
     });
   };
 
@@ -111,7 +123,7 @@ const app = () => {
     setState({
       searchValue: value,
     });
-  }
+  };
 
   const handleMinChange = (event) => {
     const { priceRange } = state;
@@ -129,7 +141,7 @@ const app = () => {
     }
 
     setState(newState);
-  }
+  };
 
   const handleMaxChange = (event) => {
     const { priceRange } = state;
@@ -147,7 +159,7 @@ const app = () => {
     }
 
     setState(newState);
-  }
+  };
 
   const handleOptionChange = (event) => {
     const { value } = event.target;
@@ -155,21 +167,21 @@ const app = () => {
     setState({
       selectedType: value,
     });
-  }
+  };
 
   const handleItemClick = (product) => {
     setState({
       isPopupActive: true,
       productSelected: product,
     });
-  }
+  };
 
   const handlePopupClick = () => {
     setState({
       isPopupActive: false,
       productSelected: {},
     });
-  }
+  };
 
   search.addEventListener('input', handleSearchChange);
   search.addEventListener('propertychange', handleSearchChange); // for IE8
@@ -188,7 +200,7 @@ const app = () => {
     option.setAttribute('id', index);
 
     return option;
-  }
+  };
 
   const types = getSelectTypeOptions(data);
 
@@ -302,7 +314,7 @@ const app = () => {
     });
 
     return items;
-  }
+  };
 
   const createItemsContainer = (results) => {
     const contentWidth = (results.length) * 300;
@@ -354,9 +366,6 @@ const app = () => {
     if (isDisabled) {
       navigationItem.classList.add('navigation-container__item--disabled');
       navigationItem.setAttribute('disabled', true);
-
-      navigationItem.removeEventListener('click',
-        handleNavigationItemClick);
     }
 
     return navigationItem;
@@ -390,7 +399,7 @@ const app = () => {
     noResultsMessage.innerText = 'Oops! Sorry, no items matching your search criteria found. Please change the filters.'
 
     return noResultsMessage;
-  }
+  };
 
   init();
 };

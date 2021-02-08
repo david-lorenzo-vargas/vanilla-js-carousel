@@ -452,6 +452,11 @@ select[id="type-select"] option {
     display: none;
   }
 
+  .navigation-container__item--disabled {
+    background-color: transparent;
+    cursor: auto;
+  }
+
   .pop-up__item {
     width: 45%;
   }

@@ -1,4 +1,4 @@
-# Product items carousel with filters
+# Product carousel with filters
 
 ## Table of Contents
 1. [Description](#description)

@@ -15,7 +15,7 @@ const getProductsByType = (products, selectedType) => {
   return products.filter(product => {
     const type = getItemType(product);
     return (type === selectedType);
-  })
+  });
 };
 
 const getProductsByPrice = (products, priceRange) => {
@@ -24,30 +24,30 @@ const getProductsByPrice = (products, priceRange) => {
   if (!min && max >= minPrice) {
     return (
       products.filter(product => (product.price >= 0 && product.price <= max))
-    )
+    );
   }
 
   if (!min && max < minPrice) {
     return (
       products.filter(product => (product.price >= 0 && product.price <= maxPrice))
-    )
+    );
   }
 
   if (!max) {
     return (
       products.filter(product => (product.price >= min && product.price <= maxPrice))
-    )
+    );
   }
 
   if (min >= max) {
     return (
       products.filter(product => (product.price >= min && product.price <= maxPrice))
-    )
+    );
   }
 
   return (
     products.filter(product => (product.price >= min && product.price <= max))
-  )
+  );
 };
 
 export const getSelectTypeOptions = (data) => {
@@ -60,7 +60,7 @@ export const getSelectTypeOptions = (data) => {
 
     acc = [...acc, type];
     return acc;
-  }, [])
+  }, []);
 };
 
 const getItemType = (item) => {
@@ -68,7 +68,7 @@ const getItemType = (item) => {
   const index = urlArray.indexOf('womens');
   const type = urlArray[index + 2];
   return type;
-}
+};
 
 export const getItems = (products, searchValue, priceRange, selectedType) => {
   const isMin = !priceRange.min;
@@ -125,4 +125,4 @@ export const getItems = (products, searchValue, priceRange, selectedType) => {
     const results = getProductsByType(products, selectedType);
     return results;
   }
-}
+};

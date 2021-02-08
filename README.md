@@ -81,6 +81,9 @@ The task is built Mobile first. Media queries and responsive design techniques (
 ### Styles
 Plain CSS
 
+### Favicon
+New Look Favicon added
+
 ### Additional implementations
 In addition to current code of the task, I believe the following implementations would be beneficial:</br>
 - The data with an array of products can be fetched from an API rather that from a mock file.
